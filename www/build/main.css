@@ -25678,6 +25678,29 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-continentes div.cards {
+  margin: 20px 10px auto;
+  max-width: 960px;
+}
+
+page-continentes div.card {
+  display: inline-block;
+  margin: 10px;
+  max-width: 300px;
+  position: relative;
+}
+
+page-continentes img {
+  width: 120px;
+  height: 120px;
+  float: center;
+  margin: 5px 5px 5px 5px;
+}
+
+page-continentes h2 {
+  text-align: center;
+}
+
 page-modal .card-background-page ion-card {
   position: relative;
   text-align: center;

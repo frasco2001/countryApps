@@ -13,7 +13,8 @@ import 'rxjs/add/operator/map';
 export class Rest {
 
   private apiUrl = 'https://restcountries.eu/rest/v2/all';
-  private apiCountry = 'https://restcountries.eu/rest/v2/alpha/'
+  private apiCountry = 'https://restcountries.eu/rest/v2/alpha/';
+  private apiContinent = 'https://restcountries.eu/rest/v2/region/';
 
   constructor(public http: Http) {}
 
@@ -23,8 +24,6 @@ export class Rest {
                     .catch(this.handleError);
   }
   getCountriesByShortName(country: string){
-
-
     let promise = new Promise((resolve, reject) => {
       this.http.get(this.apiCountry + country)
         .toPromise()
@@ -39,11 +38,15 @@ export class Rest {
     return promise;
   }
 
+  getCountriesByContinents(continent: string): Observable<string[]> {
+    return this.http.get(this.apiContinent + continent)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
   private extractData(res: Response) {
     let body = res.json();
     return body || { };
   }
-
   private handleError (error: Response | any) {
     let errMsg: string;
     if (error instanceof Response) {
@@ -56,5 +59,4 @@ export class Rest {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
-
 }
