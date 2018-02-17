@@ -274,7 +274,7 @@ var HomePage = (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h2>Welcome to Ionic!</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>'/*ion-inline-end:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h2 align="center">Máster en Tecnologías y Aplicaciones en Ingeniería Informática</h2>\n  <h2 align="center">Desarrollo Web/Móvil</h2>\n  <p>\n    <br><br><br>Esta aplicación ha sido desarrollada como trabajo para dicha asignatura.<br><br><br>\n  </p>\n  \n  <h6>Tecnologías y Herramientas Utilizadas:</h6>\n  <ul>\n    <li type="circle">Desarrollo Híbrido</li>  \n    <li type="circle">IONIC</li>  \n    <li type="circle">Y</li>    \n  </ul>\n  \n</ion-content>'/*ion-inline-end:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -556,7 +556,7 @@ var ModalPage = (function () {
     };
     ModalPage.prototype.ionViewWillEnter = function () {
         var _this = this;
-        this.population = this.navParams.get('population');
+        this.population = this.navParams.get('population').toLocaleString();
         this.name = this.navParams.get('name');
         this.nameES = this.navParams.get('translations').es;
         this.continente = this.navParams.get('region');
@@ -577,9 +577,10 @@ var ModalPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-modal',template:/*ion-inline-start:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{name}}</ion-title>\n    <ion-buttons left>\n        <button ion-button icon-only (click)="cerrar()" class="my-style-for-modal">\n            <ion-icon name="arrow-back"></ion-icon>\n        </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n<ion-list>\n  <ion-item-divider color="light">Datos del pais</ion-item-divider>\n  <ion-item>\n      <b>Nombre(ES):</b> {{nameES}}\n  </ion-item>\n  <ion-item>\n      <b>Continente:</b> {{continente}}\n  </ion-item>\n  <ion-item>\n    <b>Población:</b> {{population}}\n  </ion-item>\n  <ion-item-divider color="light">Fronteras</ion-item-divider>\n  <ion-item *ngFor="let b of borders">\n    <ion-thumbnail item-start>\n      <img [src]="b.flag">\n    </ion-thumbnail>\n    <h2>{{b.name}}</h2>\n    <p>{{b.capital}}</p>\n  </ion-item>\n</ion-list>\n</ion-content>'/*ion-inline-end:"/Users/frasco2001/Documents/workspace/web/countryApps/src/pages/modal/modal.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* Rest */]) === "function" && _d || Object])
     ], ModalPage);
     return ModalPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=modal.js.map

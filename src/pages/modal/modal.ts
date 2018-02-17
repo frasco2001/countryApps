@@ -20,7 +20,7 @@ export class ModalPage {
     console.log('ionViewDidLoad ModalPage');
   }
   ionViewWillEnter(){
-    this.population = this.navParams.get('population');
+    this.population = this.navParams.get('population').toLocaleString();
     this.name = this.navParams.get('name');
     this.nameES = this.navParams.get('translations').es;
     this.continente = this.navParams.get('region');
