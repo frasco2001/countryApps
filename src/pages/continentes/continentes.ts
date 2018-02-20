@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Rest } from '../../providers/rest/rest';
-import { ModalController } from 'ionic-angular';
 import { Modal1Page } from '../modal1/modal1';
 
 @Component({

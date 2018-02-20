@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -15,9 +15,18 @@ export class Rest {
   private apiUrl = 'https://restcountries.eu/rest/v2/all';
   private apiCountry = 'https://restcountries.eu/rest/v2/alpha/';
   private apiContinent = 'https://restcountries.eu/rest/v2/region/';
+  private tetrisUrl = 'http://ginebra.ual.es/Tetris/Api/Jugador';
 
+  private headers = new Headers();
   constructor(public http: Http) {}
 
+  getJugadores(): Observable<string[]> {
+    this.headers.set("Content-Type",'application/json');
+    return this.http.get(this.tetrisUrl,{headers : this.headers})
+                    .map(this.extractData)
+                    .catch(this.handleError);
+    }
+  
   getCountries(): Observable<string[]> {
     return this.http.get(this.apiUrl)
                     .map(this.extractData)
@@ -37,7 +46,6 @@ export class Rest {
     });
     return promise;
   }
-
   getCountriesByContinents(continent: string): Observable<string[]> {
     return this.http.get(this.apiContinent + continent)
                     .map(this.extractData)
