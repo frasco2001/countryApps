@@ -2,31 +2,31 @@
   <ion-navbar>
     <ion-title>{{name}}</ion-title>
     <ion-buttons left>
-        <button ion-button icon-only (click)="cerrar()" class="my-style-for-modal">
-            <ion-icon name="arrow-back"></ion-icon>
-        </button>
+      <button ion-button icon-only (click)="cerrar()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-<ion-list>
-  <ion-item-divider color="light">Datos del pais</ion-item-divider>
-  <ion-item>
+  <ion-list>
+    <ion-item-divider color="light">Datos del pais</ion-item-divider>
+    <ion-item>
       <b>Nombre(ES):</b> {{nameES}}
-  </ion-item>
-  <ion-item>
+    </ion-item>
+    <ion-item>
       <b>Continente:</b> {{continente}}
-  </ion-item>
-  <ion-item>
-    <b>Población:</b> {{population}}
-  </ion-item>
-  <ion-item-divider color="light">Fronteras</ion-item-divider>
-  <ion-item *ngFor="let b of borders">
-    <ion-thumbnail item-start>
-      <img [src]="b.flag">
-    </ion-thumbnail>
-    <h2>{{b.name}}</h2>
-    <p>{{b.capital}}</p>
-  </ion-item>
-</ion-list>
+    </ion-item>
+    <ion-item>
+      <b>Población:</b> {{population}}
+    </ion-item>
+    <ion-item-divider color="light">Fronteras</ion-item-divider>
+    <ion-item *ngFor="let b of borders">
+      <ion-thumbnail item-start>
+        <img [src]="b.flag">
+      </ion-thumbnail>
+      <h2>{{b.name}}</h2>
+      <p>{{b.capital}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

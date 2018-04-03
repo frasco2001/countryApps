@@ -9,26 +9,26 @@ import { ModalPage } from '../modal/modal';
   templateUrl: 'modal1.html',
 })
 export class Modal1Page {
-  
+
   countries: any[];
   nombre;
   errorMessage: string;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController, public modalCtrl: ModalController, public rest: Rest) {
-    this.countries=[];
+    this.countries = [];
   }
   ionViewDidLoad() {
     this.getContinent();
     console.log('ionViewDidLoad Modal1Page');
   }
   getContinent() {
-    this.nombre=this.navParams.get('continente');
+    this.nombre = this.navParams.get('continente');
     this.rest.getCountriesByContinents(this.nombre)
-       .subscribe(
-         countries => this.countries = countries,
-         error =>  this.errorMessage = <any>error);
+      .subscribe(
+        countries => this.countries = countries,
+        error => this.errorMessage = <any>error);
   }
-  detalle(data){
+  detalle(data) {
     let modal = this.modalCtrl.create(ModalPage, data);
     modal.present();
   }

@@ -8,10 +8,10 @@ import { ModalPage } from '../modal/modal';
   templateUrl: 'paises.html'
 })
 export class PaisesPage {
-  
+
   countries: any;
   errorMessage: string;
-  
+
   constructor(public navCtrl: NavController, public rest: Rest, public modalCtrl: ModalController) {
   }
   ionViewDidLoad() {
@@ -19,11 +19,11 @@ export class PaisesPage {
   }
   getCountries() {
     this.rest.getCountries()
-       .subscribe(
-         countries => this.countries = countries,
-         error =>  this.errorMessage = <any>error);
+      .subscribe(
+        countries => this.countries = countries,
+        error => this.errorMessage = <any>error);
   }
-  detalle(data){
+  detalle(data) {
     let modal = this.modalCtrl.create(ModalPage, data);
     modal.present();
   }

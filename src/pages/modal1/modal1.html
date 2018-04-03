@@ -2,16 +2,16 @@
   <ion-navbar>
     <ion-title>{{nombre}}</ion-title>
     <ion-buttons left>
-        <button ion-button icon-only (click)="cerrar()" class="my-style-for-modal">
-            <ion-icon name="arrow-back"></ion-icon>
-        </button>
+      <button ion-button icon-only (click)="cerrar()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let c of countries" (click)="detalle(c)">
-      <ion-avatar item-left >
+      <ion-avatar item-left>
         <img src="{{c.flag}}">
       </ion-avatar>
       <h2>{{c.name}}</h2>

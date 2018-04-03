@@ -14,13 +14,13 @@ export class TetrisPage {
   constructor(public navCtrl: NavController, public rest: Rest, public navParams: NavParams) {
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     this.getJugadores();
   }
   getJugadores() {
     this.rest.getJugadores()
-       .subscribe(
-         jugadores => this.jugadores = jugadores,
-         error =>  this.errorMessage = <any>error);
+      .subscribe(
+        jugadores => this.jugadores = jugadores,
+        error => this.errorMessage = <any>error);
   }
 }

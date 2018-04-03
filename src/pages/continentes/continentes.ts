@@ -9,13 +9,13 @@ import { Modal1Page } from '../modal1/modal1';
 })
 export class ContinentesPage {
 
-  constructor(public navCtrl: NavController, public rest: Rest, public modal1Ctrl: ModalController  ) {
+  constructor(public navCtrl: NavController, public rest: Rest, public modal1Ctrl: ModalController) {
   }
   ionViewDidLoad() {
   }
 
-  detalle(continente: string){
-    let modal = this.modal1Ctrl.create(Modal1Page, {continente: continente});
+  detalle(continente: string) {
+    let modal = this.modal1Ctrl.create(Modal1Page, { continente: continente });
     modal.present();
   }
 }

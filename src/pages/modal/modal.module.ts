@@ -10,4 +10,4 @@ import { ModalPage } from './modal';
     IonicPageModule.forChild(ModalPage),
   ],
 })
-export class ModalPageModule {}
+export class ModalPageModule { }
